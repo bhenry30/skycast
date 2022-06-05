@@ -35,7 +35,7 @@ const getCityCoords = (city) => {
     fetch(apiUrl).then((response) => {
         if (response.ok) {
             response.json().then((data) => {
-            var citySelected = `https://api.openweathermap.org/data/2.5/onecall?lat=${data[0].lat}&lon=${data[0].lon}&appid=${apiKey}`
+            var citySelected = `https://api.openweathermap.org/data/2.5/onecall?lat=${data[0].lat}&lon=${data[0].lon}&units=imperial&appid=${apiKey}`
             
             displayWeatherData(citySelected)
             })
@@ -68,10 +68,22 @@ const displayWeatherData = (citySelected) => {
     fetch(citySelected).then((response) => {
         if (response.ok) {
             response.json().then((data) => {
-         console.log(data.current.temp)
+         console.log(data)
             const currentTempEl = document.createElement("p")
-            currentTempEl.textContent = `Temperature: ${data.current.temp}`
+            currentTempEl.textContent = `Temperature: ${data.current.temp}°F`
             weatherDataContainerEl.append(currentTempEl)
+            
+            const currentUVEl = document.createElement("p")
+            currentUVEl.textContent = `UV Index: ${data.current.uvi}`
+            weatherDataContainerEl.append(currentUVEl)
+            
+            const currentHumEl = document.createElement("p")
+            currentHumEl.textContent = `Humidity: ${data.current.humidity}`
+            weatherDataContainerEl.append(currentHumEl)
+            
+            const currentWindEl = document.createElement("p")
+            currentWindEl.textContent = `Wind Speed: ${data.current.wind_speed}`
+            weatherDataContainerEl.append(currentWindEl)
             })
             } else {
             alert('Error: Weather Data Not Found');
