@@ -1,35 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="./assets/css/homepage.css">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skycast</title>
 </head>
 <body>
-    <main class="flex-row justify-space-between">
-        <div class="col-12 col-md-4">
-          <div class="card">
+    <main class="container flex-row justify-space-between">
+        <div class="card">
             <h3 class="card-header text-uppercase">Search by City:</h3>
             <form id="user-form" class="card-body">
               <label class="form-label" for="city"></label>
               <input placeholder="Enter a City" name="city" id="city" type="text" autofocus="true" class="form-input" />
               <button type="submit" class="btn">Get Weather Data</button>
             </form>
-          </div>
         </div>
-        <div class="col-12 col-md-8">
+        <br>
+        <div class="card col-12 col-md-8">
           <div class="col-12 col-md-8">
             <h2 class="subtitle">Showing weather data for: <span id="city-search-term"></span></h2>
             <div id="weather-data" class="list-group"></div>
           </div>
         </div>
-      </main>
+    </main>
       <script src="./assets/js/homepage.js"></script>
-    </body>
-    
 </body>
 </html>

@@ -1,0 +1,10 @@
+body {
+    background-image: url('../images/skycastBackground.jpg');
+    background-size: cover;
+    background-repeat:   no-repeat; 
+    height: 100vh;              
+  }
+.card {
+    margin-top: 20px;
+    padding: 10px;
+}  
